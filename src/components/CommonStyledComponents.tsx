@@ -25,3 +25,15 @@ export const FlexRow = styled(Flex)`
 export const UpperCase = styled.div`
   text-transform: uppercase;
 `;
+
+export const Grid = styled.div`
+  display: grid;
+`;
+
+export const Image = styled.img`
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+`;
+
+export const Divider = styled.hr``;
