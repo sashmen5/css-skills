@@ -13,6 +13,7 @@ import { FlexCenter, FlexRow, Grid } from 'components/CommonStyledComponents';
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Varela Round', sans-serif;
+    background-color: rgb(236, 238, 243);
     font-size: 13px;
     color: rgb(133, 140, 152)
   }
