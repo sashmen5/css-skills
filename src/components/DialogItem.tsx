@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+
 import {
   FlexCenter,
   FlexColumn,
   FlexRow,
   Image
-} from './CommonStyledComponents';
+} from 'components/CommonStyledComponents';
 
 export interface DialogItemProps {
   picture: string;
@@ -27,24 +28,47 @@ const DialogContainer = styled.li`
 `;
 
 const Right = styled(FlexColumn)`
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-end;
+  font-size: 11px;
 `;
 
 const ProfilePicture = styled(Image)`
   width: 45px;
   height: 45px;
-  margin-right: 12px;
 `;
 
-const UserName = styled.div``;
+const ProfilePictureArea = styled.div`
+  position: relative;
+`;
+
+const OnlineStatus = styled.div`
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(145, 212, 77);
+  border: 2px solid white;
+  width: 6px;
+  height: 6px;
+  right: 0;
+`;
+
+const UserName = styled.div`
+  color: black;
+`;
 
 const Notifications = styled(FlexCenter)`
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
+  font-weight: bold;
   background-color: rgb(249, 62, 70);
   color: white;
+  font-size: 10px;
+  margin-bottom: 6px;
+`;
+
+const TextArea = styled(FlexColumn)`
+  margin-left: 12px;
 `;
 
 const DialogItem: FC<DialogItemProps> = ({
@@ -58,15 +82,18 @@ const DialogItem: FC<DialogItemProps> = ({
   return (
     <DialogContainer>
       <FlexRow>
-        <ProfilePicture src={picture} alt="" />
-        <FlexColumn>
-          <div>{name}</div>
+        <ProfilePictureArea>
+          {online && <OnlineStatus />}
+          <ProfilePicture src={picture} alt="" />
+        </ProfilePictureArea>
+        <TextArea>
+          <UserName>{name}</UserName>
           <div>{message}</div>
-        </FlexColumn>
+        </TextArea>
       </FlexRow>
       <Right>
         <div>{date}</div>
-        <Notifications>{notifications}</Notifications>
+        {notifications !== 0 && <Notifications>{notifications}</Notifications>}
       </Right>
     </DialogContainer>
   );

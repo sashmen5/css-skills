@@ -22,10 +22,6 @@ export const FlexRow = styled(Flex)`
   align-items: center;
 `;
 
-export const UpperCase = styled.div`
-  text-transform: uppercase;
-`;
-
 export const Grid = styled.div`
   display: grid;
 `;
@@ -35,5 +31,6 @@ export const Image = styled.img`
   border-radius: 50%;
   display: block;
 `;
-
-export const Divider = styled.hr``;
+export const Divider = styled.div`
+  border-bottom: 1px solid rgb(137, 154, 155);
+`;

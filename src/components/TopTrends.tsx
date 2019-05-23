@@ -1,12 +1,13 @@
 import React, { FC } from 'react';
+import styled from 'styled-components';
+import { FaTelegramPlane, FaPlusCircle } from 'react-icons/fa';
+import { MdPanoramaWideAngle } from 'react-icons/md';
+
 import {
   FlexCenter,
   FlexColumnCenter,
   FlexRow
-} from './CommonStyledComponents';
-import styled from 'styled-components';
-import { FaTelegramPlane, FaPlusCircle } from 'react-icons/fa';
-import { MdPanoramaWideAngle } from 'react-icons/md';
+} from 'components/CommonStyledComponents';
 
 const TopTrendsContainer = styled(FlexColumnCenter)`
   width: 370px;

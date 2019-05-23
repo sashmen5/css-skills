@@ -1,15 +1,15 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { FlexColumn, FlexRow, Image } from './CommonStyledComponents';
-
-import { FaCalendarDay, FaHome } from 'react-icons/fa';
+import { FaCalendarDay, FaHome, FaChevronDown } from 'react-icons/fa';
 import {
   MdChatBubbleOutline,
   MdInsertDriveFile,
   MdLocalOffer,
   MdSettings
 } from 'react-icons/md';
-import MenuItem from './MenuItem';
+
+import MenuItem from 'components/MenuItem';
+import { FlexColumn, FlexRow, Image } from 'components/CommonStyledComponents';
 
 const MenuWrapper = styled(FlexColumn)`
   background-color: rgba(209, 212, 243, 0.85);
@@ -18,40 +18,28 @@ const MenuWrapper = styled(FlexColumn)`
 const UserInfo = styled(FlexColumn)`
   align-items: center;
   padding: 50px 0px 10px 0;
+  color: black;
 `;
 
 const UserPicture = styled(Image)`
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border: 4px solid white;
   margin-bottom: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19), 0 6px 12px rgba(0, 0, 0, 0.23);
 `;
 
 const UserName = styled.div`
-  //font-size: 19px;
+  font-size: 17px;
+  margin-right: 7px;
 `;
 
 const MenuList = styled.ul`
   list-style: none;
-  //font-size: 19px;
   text-transform: uppercase;
   padding: 0;
+  font-weight: bold;
 `;
-
-// const MenuItem = styled.li`
-//   padding: 20px 0;
-// `;
-//
-// const MenuContent = styled(FlexRow)`
-//   display: flex;
-//   border-left: 4px solid blue;
-//   align-items: center;
-//   padding: 10px 50px 10px 20px;
-// `;
-
-// const MenuName = styled.div`
-//   margin-left: 20px;
-// `;
 
 const menuItems: any[] = [
   {
@@ -85,8 +73,11 @@ const Menu: FC = () => {
   return (
     <MenuWrapper>
       <UserInfo>
-        <UserPicture src="http://magnetmagazine.com/wp-content/uploads/2018/11/Jimi-768x887.jpg" />
-        <UserName>Jimi Hendrix</UserName>
+        <UserPicture src="https://img.discogs.com/SLLPFJ_vMX9ZrhktQjO_nS_-iqg=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-110593-1449578430-6807.jpeg.jpg" />
+        <FlexRow>
+          <UserName>Jimi Hendrix</UserName>
+          <FaChevronDown />
+        </FlexRow>
       </UserInfo>
       <MenuList>
         {menuItems.map(item => (
